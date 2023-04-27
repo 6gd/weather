@@ -11,47 +11,8 @@ const listWeather = [
   {"nameWeather":"mist","svgurl":"images/svg/mist.svg"},
 ]
 
-// tl.to(".section",{
-//   opacity:1
-// })
-// tl.from("#CARDX",{
-//   yPercent: -200,
-//   borderRadius:"50%",
-//   ease:"expo.out"
-// })
-// tl.from("#PrCard",{
-//   scale:0,
-//   ease:"expo.out"
-// })
-// tl.from("#DayName",{
-//   yPercent: -200,
-//   ease:"elastic.out(1, 0.3)"
-// })
-// tl.from("#humidity",{
-//   yPercent: 200,
-//   ease:"elastic.out(1, 0.3)"
-// })
-// tl.from("#humidityNIght",{
-//   yPercent:200,
-//   ease:"elastic.out(1, 0.3)"
-// })
+let tl = gsap.timeline({duration:.1,});
 
-// tl.from(".box-details",{
-//   borderRadius:"50%",
-//   autoAlpha: 0,
-//   x: -50,
-//   ease:"expo.out"
-// })
-// tl.from(".title-box",{
-//   opacity:0,
-//   ease:"expo.out"
-// })
-// tl.from(".box",{
-//   opacity:0,
-//   stagger:.3,
-//   x: 50,
-//   ease:"expo.out"
-// })
 
 
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -179,7 +140,6 @@ function getWaether(lng,lat){
 }
 
 const successCallback = (position) => {
-  // document.body.textContent = position.coords.longitude,position.coords.latitude
   getWaether(position.coords.longitude,position.coords.latitude)
 };
 
@@ -188,33 +148,13 @@ const errorCallback = (error) => {
 };
 
 
-let tl = gsap.timeline({duration:.1,});
 $(window).on("load",function(){
   $(".loader-wapper").fadeOut()
-  navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 
 });
 
+navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 
-
-
-// var div = document.getElementById("location")
-// div.addEventListener("click",getLocation)
-// function getLocation() {
-//   if( navigator.geolocation){
-//     navigator.geolocation.getCurrentPosition(showPositon, showError);
-//   }else{
-//     div.innerHTML = "THe Brower Does not Support"
-//   }
-// }
-
-// function showPositon(position) {
-//   var lat = position.coords.latitude
-//   var lon = position.coords.longitude
-//   div.innerHTML = lat
-// }
-// function showError(error){
-//   if(error.PERMISSION_DENIED){
-//     div.innerHTML = "The User Have Denid the request for geolocation"
-//   }
-// }
+if (window.innerWidth >= 560) {
+  $(".loader-wapper").css("display", "none")
+}
