@@ -10,7 +10,51 @@ const listWeather = [
   {"nameWeather":"snow","svgurl":"images/svg/snow.svg"},
   {"nameWeather":"mist","svgurl":"images/svg/mist.svg"},
 ]
+let tl = gsap.timeline({duration:.1,});
+$(window).on("load",function(){
+  $(".loader-wapper").fadeOut()
+});
+// tl.to(".section",{
+//   opacity:1
+// })
+// tl.from("#CARDX",{
+//   yPercent: -200,
+//   borderRadius:"50%",
+//   ease:"expo.out"
+// })
+// tl.from("#PrCard",{
+//   scale:0,
+//   ease:"expo.out"
+// })
+// tl.from("#DayName",{
+//   yPercent: -200,
+//   ease:"elastic.out(1, 0.3)"
+// })
+// tl.from("#humidity",{
+//   yPercent: 200,
+//   ease:"elastic.out(1, 0.3)"
+// })
+// tl.from("#humidityNIght",{
+//   yPercent:200,
+//   ease:"elastic.out(1, 0.3)"
+// })
 
+// tl.from(".box-details",{
+//   borderRadius:"50%",
+//   autoAlpha: 0,
+//   x: -50,
+//   ease:"expo.out"
+// })
+// tl.from(".title-box",{
+//   opacity:0,
+//   ease:"expo.out"
+// })
+// tl.from(".box",{
+//   opacity:0,
+//   stagger:.3,
+//   x: 50,
+//   ease:"expo.out"
+// })
 
 
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -90,7 +134,50 @@ function getWaether(lng,lat){
     
     splide.mount();
   }
+  tl.to(".section",{
+    opacity:1
+  })
+  tl.from("#CARDX",{
+    yPercent: -200,
+    borderRadius:"50%",
+    ease:"expo.out"
+  })
+  tl.from("#PrCard",{
+    scale:0,
+    ease:"expo.out"
+  })
+  tl.from("#DayName",{
+    yPercent: -200,
+    ease:"elastic.out(1, 0.3)"
+  })
+  tl.from("#humidity",{
+    yPercent: 200,
+    ease:"elastic.out(1, 0.3)"
+  })
+  tl.from("#humidityNIght",{
+    yPercent:200,
+    ease:"elastic.out(1, 0.3)"
+  })
   
+  tl.from(".box-details",{
+    borderRadius:"50%",
+    autoAlpha: 0,
+    x: -50,
+    ease:"expo.out"
+  })
+  tl.from(".title-box",{
+    opacity:0,
+    ease:"expo.out"
+  })
+  tl.from(".box",{
+    opacity:0,
+    stagger:.3,
+    x: 50,
+    ease:"expo.out"
+  })
+  tl.from(".splide",{
+    opacity:0,
+  })
 })
 }
 
