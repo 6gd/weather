@@ -21,7 +21,7 @@ body{
     justify-content: center;
     align-items: center;
     position: absolute;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 .splide {
     margin: 0 auto;
@@ -295,7 +295,7 @@ body{
         scroll-snap-align: start;
     }
     .box-details{
-        height: 60%;
+        height: 470px;
     }
     .box{
         min-height: 79px;
@@ -313,6 +313,7 @@ body{
         
     }
     .container-air{
+        padding: 100px 0;
         grid-template-columns: repeat(auto-fill, minmax(90px,300px));
     }
     .container{
