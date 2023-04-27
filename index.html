@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="perivewCard">
+                <div class="Card x" >
+                    <h4 class="DayName" id="DayName"></h4>
+                    <img src="" id="PrCard" loading="lazy" alt="">
+                    <h3 class="humidity" id="humidity"></h3>
+                    <h3 class="humidityNIght" id="humidityNIght"></h3>
+                </div>
+                <div class="box-details">
+                    <h2 class="title-box">Air Conditions</h2>
+                    <div class="container-air">
+                        <div class="box">
+                            <div>
+                                <i class="fa-solid fa-temperature-half"></i>
+                                <h3>Real Feel</h3>
+                            </div>
+                            <h4 id="RealFeel"></h4>
+                        </div>
+                        <div class="box">
+                            <div>
+                                <i class="fa-solid fa-wind"></i>
+                                <h3>Wind</h3>
+                            </div>
+                            <h4 id="wind_speed"></h4>
+                        </div>
+                        <div class="box">
+                            <div>
+                                <i class="fa-solid fa-droplet"></i>
+                                <h3>chance fo Rain</h3>
+                            </div>
+                            <h4 id="chancefoRain"></h4>
+                        </div>
+                        <div class="box">
+                            <div>
+                                <i class="fa-solid fa-sun"></i>
+                                <h3>UV index</h3>
+                            </div>
+                            <h4 id="uvindex"></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="forecast">7-day forecast</div>
+
+            <div class="splide">
+                <div class="splide__track">
+                    <div class="splide__list containerCard">
+                    
+                    </div>
+                </div>
+            </div>
+            
+            <!-- <div class="containerCard">
+
+            </div> -->
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.6/axios.min.js" integrity="sha512-06NZg89vaTNvnFgFTqi/dJKFadQ6FIglD6Yg1HHWAUtVFFoXli9BZL4q4EO1UTKpOfCfW5ws2Z6gw49Swsilsg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
