@@ -10,10 +10,7 @@ const listWeather = [
   {"nameWeather":"snow","svgurl":"images/svg/snow.svg"},
   {"nameWeather":"mist","svgurl":"images/svg/mist.svg"},
 ]
-let tl = gsap.timeline({duration:.1,});
-$(window).on("load",function(){
-  $(".loader-wapper").fadeOut()
-});
+
 // tl.to(".section",{
 //   opacity:1
 // })
@@ -190,9 +187,13 @@ const errorCallback = (error) => {
   console.log(error);
 };
 
-navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 
+let tl = gsap.timeline({duration:.1,});
+$(window).on("load",function(){
+  $(".loader-wapper").fadeOut()
+  navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 
+});
 
 
 
