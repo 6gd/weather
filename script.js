@@ -148,13 +148,14 @@ const errorCallback = (error) => {
 };
 
 
-$(window).on("load",function(){
-  $(".loader-wapper").fadeOut()
 
-});
 
 navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 
 if (window.innerWidth >= 560) {
+  $(window).on("load",function(){
+    $(".loader-wapper").fadeOut()
+  });
+}else if (window.innerWidth < 560){
   $(".loader-wapper").css("display", "none")
 }
