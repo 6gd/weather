@@ -195,8 +195,10 @@ const errorCallback = (error) => {
 
 
 navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-$(window).on("load",function(){
+$(window).on("DOMContentLoaded",function(){
   $(".loader-wapper").fadeOut()
+  navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+
 });
 // if (window.innerWidth >= 560) {
 //   $(window).on("load",function(){
