@@ -14,51 +14,6 @@ const listWeather = [
 
 let tl = gsap.timeline({duration:.1,});
 
-tl.to(".section",{
-  opacity:1
-})
-tl.from("#CARDX",{
-  yPercent: -200,
-  borderRadius:"50%",
-  ease:"expo.out"
-})
-tl.from("#PrCard",{
-  scale:0,
-  ease:"expo.out"
-})
-tl.from("#DayName",{
-  yPercent: -200,
-  ease:"elastic.out(1, 0.3)"
-})
-tl.from("#humidity",{
-  yPercent: 200,
-  ease:"elastic.out(1, 0.3)"
-})
-tl.from("#humidityNIght",{
-  yPercent:200,
-  ease:"elastic.out(1, 0.3)"
-})
-
-tl.from(".box-details",{
-  borderRadius:"50%",
-  autoAlpha: 0,
-  x: -50,
-  ease:"expo.out"
-})
-tl.from(".title-box",{
-  opacity:0,
-  ease:"expo.out"
-})
-tl.from(".box",{
-  opacity:0,
-  stagger:.3,
-  x: 50,
-  ease:"expo.out"
-})
-tl.from(".splide",{
-  opacity:0,
-})
-
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 
@@ -191,14 +146,57 @@ const errorCallback = (error) => {
   console.log(error);
 };
 
-
+tl.to(".section",{
+  opacity:1
+})
 
 
 navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 $(window).on("DOMContentLoaded",function(){
   $(".loader-wapper").fadeOut()
   navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-
+  tl.from("#CARDX",{
+    yPercent: -200,
+    borderRadius:"50%",
+    ease:"expo.out"
+  })
+  tl.from("#PrCard",{
+    scale:0,
+    ease:"expo.out"
+  })
+  tl.from("#DayName",{
+    yPercent: -200,
+    ease:"elastic.out(1, 0.3)"
+  })
+  tl.from("#humidity",{
+    yPercent: 200,
+    ease:"elastic.out(1, 0.3)"
+  })
+  tl.from("#humidityNIght",{
+    yPercent:200,
+    ease:"elastic.out(1, 0.3)"
+  })
+  
+  tl.from(".box-details",{
+    borderRadius:"50%",
+    autoAlpha: 0,
+    x: -50,
+    ease:"expo.out"
+  })
+  tl.from(".title-box",{
+    opacity:0,
+    ease:"expo.out"
+  })
+  tl.from(".box",{
+    opacity:0,
+    stagger:.3,
+    x: 50,
+    ease:"expo.out"
+  })
+  tl.from(".splide",{
+    opacity:0,
+  })
+  
 });
 // if (window.innerWidth >= 560) {
 //   $(window).on("load",function(){
