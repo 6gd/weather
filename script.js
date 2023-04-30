@@ -22,7 +22,7 @@ function getWaether(lng,lat){
 
   let daily = resopne.data.daily
   let current = resopne.data.current
-  console.log(daily)
+  // console.log(daily)
   for (let index = 0; index < listWeather.length; index++) {
     if (daily[0].weather[0].description === listWeather[index].nameWeather) {
       document.getElementById("PrCard").src = listWeather[index].svgurl
@@ -69,7 +69,7 @@ function getWaether(lng,lat){
             <h3 class="humidityNIght">${Math.round(listW.temp.morn)}°</h3>
         </div>
       </div>`
-        document.querySelector(".splide__list").innerHTML += card
+        document.querySelector(".containerCard").innerHTML += card
       }
       
     }
@@ -146,19 +146,21 @@ const errorCallback = (error) => {
   console.log(error);
 };
 
-tl.to(".section",{
-  opacity:1
-})
+// tl.to(".section",{
+//   opacity:1
+// })
 
-
-navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+// navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+// document.querySelector(".containerCard").children.length
 $(window).on("DOMContentLoaded",function(){
   $(".loader-wapper").fadeOut()
+
   navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
   tl.from("#CARDX",{
     yPercent: -200,
     borderRadius:"50%",
-    ease:"expo.out"
+    ease:"expo.out",
+    opacity:0,
   })
   tl.from("#PrCard",{
     scale:0,
@@ -198,6 +200,7 @@ $(window).on("DOMContentLoaded",function(){
   })
   
 });
+
 // if (window.innerWidth >= 560) {
 //   $(window).on("load",function(){
 //     $(".loader-wapper").fadeOut()
